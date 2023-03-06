@@ -58,7 +58,7 @@ jobs:
   push-image:
     name: Enviando imagem para o DockerHub
     needs: tests
-    uses: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Login DockerHub
@@ -80,7 +80,7 @@ jobs:
 
   deploy:
     name: Publica App ACI
-    need: push-image
+    needs: push-image
     runs-on: ubuntu-latest
     steps:
     - name: Login via Azure CLI
