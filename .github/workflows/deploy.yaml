@@ -53,7 +53,7 @@ jobs:
       - name: Compilação
         run: mvn clean install -DskipTests
       - name: Testes Unitarios
-        run: mvn -B test --file pom.xlm
+        run: mvn -B test --file pom.xml
 
   push-image:
     name: Enviando imagem para o DockerHub
